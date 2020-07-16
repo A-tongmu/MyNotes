@@ -82,4 +82,38 @@ window.open(
 )
 ```
 
+## Git
+
+### 版本回退
+
+- 1 git reset
+git reset中有三个命令（--hard、--soft与--mixed）；主要用于工作区、暂存区、本地仓库三个区域的文件提交撤回
+
+```javascript
+git log //查看commit的操作行为哈希ID
+git reset --hard *** //会将工作区、暂存区、本地仓库的所有提交的文件全都撤销(操作需谨慎)
+git reset --soft *** //用于将文件提交至本地仓库后撤回暂存区的操作
+git reset --mixed *** //用于将本地仓库文件撤回至工作区
+
+```
+- 2 git revert
+git revert 可以实现代码回退，版本向前的效果，回退代码建议使用该命令，可以保留commit记录
+```javascript
+git revert *** //反做某次commit
+git revert ***...*** //撤销一串提交，不包括前但包括后，即( ]
+git revert *** *** //撤销多个指定提交
+```
+* 出现Please enter the commit message for your changes. Lines starting'  输入 :wq 退出
+
+- 3 git stash
+git stash 暂存本地代码，开发中很好用
+```javascript
+git stash  //未add之前执行
+git stash list //查看保存的记录列表
+//***取出***//
+git stash apply //默认使用第一个存储,即stash@{0}，不会删除存储记录
+git stash pop //与 apply 差不多，只不过这个在取出之后会将此stash空间删除
+
+```
+
 ### 待续...
