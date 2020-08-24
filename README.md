@@ -116,4 +116,58 @@ git stash pop //与 apply 差不多，只不过这个在取出之后会将此sta
 
 ```
 
+## CSS3
+- 1 radial-gradient
+radial-gradient 实现电商卡券效果
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .cnt {
+      width: 500px;
+      margin: 100px auto;
+      filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.15));
+    }
+    .top {
+      height: 100px;
+      background: radial-gradient(circle at bottom left, transparent 10px, pink 0)
+        bottom left,
+      radial-gradient(circle at bottom right, transparent 10px, pink 0) bottom
+        right;
+      background-size: 60% 100%;
+      background-repeat: no-repeat;
+      border-radius: 5px 5px 0 0;
+    }
+    b {
+      position: absolute;
+      left: 10px;
+      width: 480px;
+      border-top: 2px dotted #000;
+    }
+    .bottom {
+      height: 100px;
+      background: radial-gradient(circle at top left, transparent 10px, pink 0)
+        top left,
+      radial-gradient(circle at top right, transparent 10px, pink 0) top right;
+      background-size: 60% 100%;
+      background-repeat: no-repeat;
+      border-radius: 0 0 5px 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cnt">
+    <div class="top"></div>
+    <b></b>
+    <div class="bottom"></div>
+  </div>
+</body>
+</html>
+```
+* 效果图：
+
 ### 待续...
